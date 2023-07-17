@@ -1,0 +1,194 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Estilos para o cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2de7;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para os links ativos */
+nav ul li a.active {
+    font-weight: bold;
+}
+
+
+
+/* Estilos para seção "Sobre a Loja" */
+
+.sobre {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2rem;
+    
+}
+
+.sobre-img {
+    width: 45%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.sobre h2 {
+border-bottom: 2px solid #2a2de7;
+padding-bottom: 18px;
+
+}
+
+.sobre-text {
+    width: 50%;
+    color: #2a2de7;
+}
+
+/* Faixa Titulo Produtos */
+div.faixaTitulo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    border-top: 2px solid #2a2de7;
+    border-bottom: 2px solid #2a2de7;
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: -webkit-linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+   
+  }
+
+  div.faixaTitulo h2 {
+    font-family: var(--bold);
+    color: #2a2de7;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1;
+  }
+
+
+/* Estilos para seção de produtos */
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.produto {
+    flex: 1 1 200px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.produto h3, .produto p {
+    margin: 10px;
+}
+
+.produto button {
+    flex-shrink: 0;  /* impede que o botão encolha */
+    flex-basis: auto; /* faz com que o botão tenha um tamanho baseado em seu conteúdo */
+    min-width: 100px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    align-self: center;
+    border-radius: 10px;
+    transition: all 0.3s ease
+}
+
+.produto button:hover {
+    background-color: #005885; /* muda a cor de fundo quando o mouse passa por cima */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* adiciona uma sombra */
+    transform: scale(1.05); /* aumenta o tamanho do botão */
+}
+
+
+/* Media */
+/* Estilos para responsividade */
+@media (max-width: 1023px) {
+    .sobre {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-img,
+    .sobre-text {
+        width: 100%;
+    }
+
+    div.faixaTitulo  {
+        padding: 8px;
+      }
+      div.faixaTitulo h2{
+        font-size: 1.2rem;
+      }
+
+      .produtos {
+        flex-direction: column;
+    }
+}
+
+
+
+/* regra para telas entre 600px e 1000px */
+@media screen and (min-width: 680px) and (max-width: 1000px) {
+    .produtos {
+        display: grid;  /* configura o layout para grid */
+        grid-template-columns: 1fr 1fr;  /* divide o grid em duas colunas */
+        gap: 20px;  /* adiciona um espaço entre os itens do grid */
+    }
+
+    .produto {
+        margin: 0;  /* remove a margem do produto, já que agora estamos usando gap para espaçamento */
+    }
+}
